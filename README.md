@@ -42,14 +42,14 @@ fs
 Install Inquirer using npm install.  
 
 Run the program by typing "node app.js" in the command line.  
-![image](./Develop/assets/images/run.png)   
+![image](./Develop/assets/Images/run.png)   
 
 A series of questions will appear, one by one, asking for information about the team manager. These questions are:     
   --What is the manager's name?  
   --What is the manager's id?   
   --What is the manager's email address?  
   --What is the manager's office number?
-![image](./Develop/assets/images/managerquestions.png)  
+![image](./Develop/assets/Images/managerquestions.png)  
 
 Next, the user will be asked if they would like to add another member to the team profile and will be given a choice of adding an engineer, an intern, or not adding anyone new. If the user chooses to add an engineer, then they will be prompted with the following questions:    
   --What is the engineer's name?  
@@ -62,11 +62,11 @@ If the user chooses to add an intern, they will be prompted to answer the follow
   --What is the intern's id?    
   --What is the intern's email address?    
   --What is the intern's school?    
-![image](./Develop/assets/images/allquestions.png)
+![image](./Develop/assets/Images/allquestions.png)
 The user may add as many new members to their team as they would like. When they finish and choose, "I don't want to add any more team members," an html file called team.html will be added to their output folder.   
 
 Once opened, the user can see their styled, well organized team profile page complete with a card for each employee that includes all of the provided information as well as an icon that corresponds with each role.
-![image](./Develop/assets/images/webpage.png) 
+![image](./Develop/assets/Images/webpage.png) 
 
 ## Demonstration Video Link
 (https://drive.google.com/file/d/18x1tXYO_kJeNDa8-VRgbrhDG_5-In7ap/view)
