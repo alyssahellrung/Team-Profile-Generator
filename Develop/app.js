@@ -18,22 +18,22 @@ function managerQuestions() {
   {
     type: "input",
     name: "name",
-    message: "What is your manager's name?"
+    message: "What is the manager's name?"
   },
   {
     type: "input",
     name: "id",
-    message: "What is your manager's id?"
+    message: "What is the manager's id?"
   },
   {
     type: "input",
     name: "email",
-    message: "What is your manager's email address?"
+    message: "What is the manager's email address?"
   },
   {
     type: "input",
     name: "office",
-    message: "What is your manager's office number?"
+    message: "What is the manager's office number?"
   },
   {
     type: "list",
@@ -42,7 +42,7 @@ function managerQuestions() {
     choices: [
       "Engineer",
       "Intern",
-      "I don't want to add anymore team members."
+      "I don't want to add any more team members."
     ]
   }
   ]).then(function(data) {
@@ -57,22 +57,22 @@ function managerQuestions() {
   {
     type: "input",
     name: "name",
-    message: "What is your engineer's name?"
+    message: "What is the engineer's name?"
   },
   {
     type: "input",
     name: "id",
-    message: "What is your engineer's id?"
+    message: "What is the engineer's id?"
   },
   {
     type: "input",
     name: "email",
-    message: "What is your engineer's email address?"
+    message: "What is the engineer's email address?"
   },
   {
     type: "input",
     name: "username",
-    message: "What is your engineer's GitHub username?"
+    message: "What is the engineer's GitHub username?"
   },
   {
     type: "list",
@@ -81,7 +81,7 @@ function managerQuestions() {
     choices: [
       "Engineer",
       "Intern",
-      "I don't want to add anymore team members."
+      "I don't want to add any more team members."
     ]
   }
   ]).then(function(data) {
@@ -97,22 +97,22 @@ function internQuestions() {
 {
   type: "input",
   name: "name",
-  message: "What is your intern's name?"
+  message: "What is the intern's name?"
 },
 {
   type: "input",
   name: "id",
-  message: "What is your intern's id?"
+  message: "What is the intern's id?"
 },
 {
   type: "input",
   name: "email",
-  message: "What is your intern's email address?"
+  message: "What is the intern's email address?"
 },
 {
   type: "input",
   name: "school",
-  message: "What is your intern's school?"
+  message: "What is the intern's school?"
 },
 {
   type: "list",
@@ -121,7 +121,7 @@ function internQuestions() {
   choices: [
     "Engineer",
     "Intern",
-    "I don't want to add anymore team members."
+    "I don't want to add any more team members."
   ]
 }
 ]).then(function(data) {

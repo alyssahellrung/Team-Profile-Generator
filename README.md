@@ -7,6 +7,8 @@ This is a command-line application that dynamically generates a webpage that dis
 
 * [Technologies Used](#technologies-used)
 
+* [Libraries Used](#libraries-used)
+
 * [Dependencies](#dependencies)
 
 * [How to Use](#how-to-use)
@@ -22,64 +24,73 @@ This is a command-line application that dynamically generates a webpage that dis
 * [Future Development Ideas](#future-development-ideas)
 
 ## Technologies Used  
-Built in Visual Studio with    
-HTML
-CSS
-Bootstrap
-Font Awesome
-Javascript  
-Node.js   
+Built in Visual Studio with      
+HTML  
+CSS  
+Javascript    
+Node.js     
+
+## Libraries Used
+Bootstrap  
+Font Awesome  
 
 ## Dependencies  
-Inquirer   
-fs  
+Inquirer     
+fs    
 
 ## How to Use  
-1) Install Inquirer using npm install.
-2) Run the program by typing "node app.js" in the command line.
-![image]() 
-3) A series of questions will appear, one by one. They will ask you to input:  
-  --your GitHub username
-  ![image]()  
-  --the title of your project  
-  --a short description of the project  
-  --any installation instructions your user will need in order to run your program  
-  --instructions on how to use your program  
-  --what version your program is  
-  --what license you are using (choose MIT, Apache, BSD, ISC, or no license)  
-  --instructions for how others can contribute to your project  
-  --how to run tests on the project  
-  ![image]()
-4) Once all of the questions are answered, a new file called "README.md" will appear in your directory. 
-![image]()
-This file will include:  
-  --your project's title  
-  --badges for your license and version number.     
-  --a link to your GitHub  
-  --the short description of your project that you entered on the command line  
-  --a table of contents with links to the appropriate sections of your README  
-  --the installation instructions, usage instructions, version, license, instructions for how to contribute, and test information that you entered on the command line  
-  --a section where users or developers can contact you with questions. This section will include your GitHub profile picture and your GitHub email address if it is public.
-![image]()  
+Install Inquirer using npm install.  
+
+Run the program by typing "node app.js" in the command line.  
+![image](./Develop/assets/images/run.png)   
+
+A series of questions will appear, one by one, asking for information about the team manager. These questions are:     
+  --What is the manager's name?  
+  --What is the manager's id?   
+  --What is the manager's email address?  
+  --What is the manager's office number?
+![image](./Develop/assets/images/managerquestions.png)  
+
+Next, the user will be asked if they would like to add another member to the team profile and will be given a choice of adding an engineer, an intern, or not adding anyone new. If the user chooses to add an engineer, then they will be prompted with the following questions:    
+  --What is the engineer's name?  
+  --What is the engineer's id?  
+  --What is the engineer's email address?    
+  --What is the engineer's GitHub username?  
+
+If the user chooses to add an intern, they will be prompted to answer the following questions:  
+  --What is the intern's name?    
+  --What is the intern's id?    
+  --What is the intern's email address?    
+  --What is the intern's school?    
+![image](./Develop/assets/images/allquestions.png)
+The user may add as many new members to their team as they would like. When they finish and choose, "I don't want to add any more team members," an html file called team.html will be added to their output folder.   
+
+Once opened, the user can see their styled, well organized team profile page complete with a card for each employee that includes all of the provided information as well as an icon that corresponds with each role.
+![image](./Develop/assets/images/webpage.png) 
 
 ## Demonstration Video Link
-
+(https://drive.google.com/file/d/18x1tXYO_kJeNDa8-VRgbrhDG_5-In7ap/view)
 
 ## How I Made This  
-I started with two Javascript files, one (index.js) that handled the Inquirer prompts, the Axios AJAX call, and the writeFile function, and the other (generateMarkdown.js) that laid out the structure of the README.md file that I was putting together, using template literals as a way to both plan out the page and handle the respnses coming in from the user and GitHub's API.  
+I was given some starter code for this project: html templates, htmlRenderer.js, the first few lines of app.js, plus all of the tests. 
 
-Because I brought the generateMarkdown.js file over to index.js and assigned it to the const "markdown", I was able to inject that template into the writeFile function in index.js.  
+The first thing I did was install jest and inquirer. Then I ran the tests to see what was missing. That helped me to create the Employee class and then the Manager, Intern, and Engineer classes, which extended the Employee class. I continued to run those tests until they all passed.
 
-The application gets most of the content for the generated README directly from the user, but it uses their GitHub username to access their GitHub profile image and email address from the GitHub API.
+At that point I finished the app.js code, first laying out all of the functions that included inquirer prompts for each employee role and then pushed each employee's data into an array called "team". These functions also handled the logic of which questions come next and what happens if the user is finished adding team members to their list. 
+
+The html renderer code did a lot of the work for me in terms of getting the information from the team array to the produced "team.html" file via the templates. 
+
+Finally, I styled it out a little bit using CSS. 
 
 ## Tests
-Tested with Jest. Install Jest and type "run npm test" in the command line to test.
+Tested with Jest. If interested, install Jest and type "run npm test" in the command line to test.
 
 ## Link to GitHub Repo    
 (https://github.com/alyssahellrung/Team-Profile-Generator)
 
 ## Future Development Ideas
-
+I need to clean up the styling a little bit in terms of making the cards consistent in size without compromising the readability of the infomation on the cards.
+I would really like for there to be a way to add company logos in the jumbotron and to allow the user to pick which colors the page ends up being.
 
 
 
