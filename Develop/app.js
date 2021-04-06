@@ -52,8 +52,8 @@ function managerQuestions() {
   });
 };
 
-  function engineerQuestions() {
-    inquirer.prompt([
+function engineerQuestions() {
+  inquirer.prompt([
   {
     type: "input",
     name: "name",
@@ -94,58 +94,58 @@ function managerQuestions() {
 
 function internQuestions() {
   inquirer.prompt ([
-{
-  type: "input",
-  name: "name",
-  message: "What is the intern's name?"
-},
-{
-  type: "input",
-  name: "id",
-  message: "What is the intern's id?"
-},
-{
-  type: "input",
-  name: "email",
-  message: "What is the intern's email address?"
-},
-{
-  type: "input",
-  name: "school",
-  message: "What is the intern's school?"
-},
-{
-  type: "list",
-  name: "member",
-  message: "Which type of team member would you like to add?",
-  choices: [
-    "Engineer",
-    "Intern",
-    "I don't want to add any more team members."
-  ]
-}
-]).then(function(data) {
-  const intern = new Intern(data.name, data.id, data.email, data.school);
-  team.push(intern);
-  addMember(data);    
-});
+  {
+    type: "input",
+    name: "name",
+    message: "What is the intern's name?"
+  },
+  {
+    type: "input",
+    name: "id",
+    message: "What is the intern's id?"
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is the intern's email address?"
+  },
+  {
+    type: "input",
+    name: "school",
+    message: "What is the intern's school?"
+  },
+  {
+    type: "list",
+    name: "member",
+    message: "Which type of team member would you like to add?",
+    choices: [
+      "Engineer",
+      "Intern",
+      "I don't want to add any more team members."
+    ]
+  }
+  ]).then(function(data) {
+    const intern = new Intern(data.name, data.id, data.email, data.school);
+    team.push(intern);
+    addMember(data);    
+  });
 };
   
-  function addMember(data) {
-    if (data.member === "Engineer") {
-      engineerQuestions();
-    }
-    else if (data.member === "Intern") {
-      internQuestions();
-    }
-    else {
-      fs.writeFile(outputPath, render(team), (err) => {
-        if (err) {
-          throw error;
-        };
-      })
-    }
+function addMember(data) {
+  if (data.member === "Engineer") {
+    engineerQuestions();
   }
+  else if (data.member === "Intern") {
+    internQuestions();
+  }
+  else {
+    fs.writeFile(outputPath, render(team), (err) => {
+      if (err) {
+        throw error;
+      };
+    })
+  }
+}
 
 
 managerQuestions();
