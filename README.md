@@ -1,4 +1,4 @@
-# TEAM PROFILE GENERATOR--Homework 10
+# TEAM PROFILE GENERATOR  
 
 ## Description  
 This is a command-line application that dynamically generates a webpage that displays information about a team of employees based on user input.
